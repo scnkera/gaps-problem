@@ -1,6 +1,19 @@
 def find_gaps(intervals):
-    # Write your solution here!
-    pass
+
+    intervals = sorted(intervals)
+    gaps = []
+    
+
+    for i in range(len(intervals) - 1):
+        curr  = intervals[i]
+        next = intervals[i+1]
+        
+        if curr[1] < next[0]:
+            gaps.append((curr[1], next[0]))
+
+
+    return tuple(gaps)
+
 
 intervals_1 = (
     (5, 10),
